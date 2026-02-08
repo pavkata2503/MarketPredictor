@@ -1,0 +1,17 @@
+{
+  "name": "forex-news-sentiment",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "vader-sentiment": "^1.1.3"
+  }
+}
+
+

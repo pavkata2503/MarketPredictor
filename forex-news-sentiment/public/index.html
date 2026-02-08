@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forex News Sentiment</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>Forex News Sentiment</h1>
+        <p class="sub">
+          Pulls recent headlines, compares base vs quote currency sentiment, and outputs a simple bullish/bearish/neutral signal.
+        </p>
+      </header>
+
+      <section class="card">
+        <div class="row">
+          <div>
+            <label for="pair">Pair</label>
+            <select id="pair"></select>
+          </div>
+
+          <div>
+            <label for="timespan">Timespan</label>
+            <select id="timespan">
+              <option value="6h">Last 6 hours</option>
+              <option value="24h" selected>Last 24 hours</option>
+              <option value="3d">Last 3 days</option>
+              <option value="1w">Last 1 week</option>
+            </select>
+          </div>
+
+          <div class="actions">
+            <button id="run">Analyze</button>
+          </div>
+        </div>
+
+        <div id="status" class="status"></div>
+
+        <div id="result" class="result hidden">
+          <div class="pill" id="decisionPill"></div>
+          <div class="metrics" id="metrics"></div>
+          <p class="summary" id="summary"></p>
+
+          <div class="cols">
+            <div>
+              <h3 id="baseTitle">Base headlines</h3>
+              <div id="baseHeadlines" class="list"></div>
+            </div>
+            <div>
+              <h3 id="quoteTitle">Quote headlines</h3>
+              <div id="quoteHeadlines" class="list"></div>
+            </div>
+          </div>
+
+          <p class="fineprint">
+            This is a simplistic sentiment heuristic and not trading advice.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
